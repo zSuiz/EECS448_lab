@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> "EECS 448" Lab 4 Exercise 3 </title>
+        <link href = "style.css" rel = "stylesheet" >
+        <script src = "formChecker.js" type ="text/javascript"></script>
+    </head>
+
+    <body>
+      <center>
+    <h1>Rainy's Day Store</h1>
+      </center>
+    <form  action="customerBackend.php" onsubmit="return validInput()" method="post">
+
+        <div align="center">
+        <h2>User login: </h2>
+        Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="email" required name="userEmail" id = "email" placeholder="Please Enter your email"  title="User's email">
+
+        <br>
+        <br>
+        Password:
+        <input type="password" required name="password" id = "password" placeholder="Please Enter your password"  title="User's password">
+        <br>
+        <br><br><br>
+      </div>
+
+        <table style="width:60%" border = 0 align= "center">
+            <tr>
+              <th>Ninja Umbrella</th>
+              <th>Women's Midd-C Rains boot</th>
+              <th>Kid's Coat</th>
+            </tr>
+            <tr>
+              <td>
+                  <br>
+                  <br><br><br>
+                  <div align="center">
+                    <img src = "umbrella.jpg" alt="umbrella" height="290">
+                    <h3>Ninja Umbrella</h3>
+                    <i>Size: large</i>
+                    <p><i>$21.99 each</i></p>
+                    Quantity:<input type="number" required value = "" name="umbrella" id = "umbrella">
+                  </div>
+                  <br>
+                  <br>
+              </td>
+              <td>
+                  <br>
+                  <br><br><br>
+                  <div align="center">
+                  <img src = "boot.jpg"  alt="boat" height = "290">
+                  <h3> Women's Midd-C Rains boot</h3>
+                  <i>Size: 9</i>
+                  <p><i>$19.99 each</i></p>
+                   Quantity:<input type="number" required value = "" name="boot" id = "boot">
+                  </div>
+                  <br>
+                  <br>
+
+              </td>
+
+              <td>
+                  <br><br><br><br>
+                  <div align="center">
+                  <img src = "coat.jpg" alt="coat" height = "290"><br>
+                  <h3>  Kid's Coat</h3>
+                  <i>Size: 10</i>
+                  <p><i>$10.99 each</i></p>
+                  Quantity:<input type="number" required value = "" name="coat" id = "coat">
+                  </div>
+                  <br>
+                  <br>
+              </td>
+            </tr>
+
+          </table>
+
+
+
+      <center>
+
+        <h3>Please pick your shipping</h3>
+        <h2><i> Shipping:  </i></h2>
+
+        <table style="width:40%" border = 0 align = "center">
+            <tr>
+              <td> <div align="center">
+                <input type="radio" required name="ShippingCOST" value="Free7days" align= "middle"> Free 7 day<br><br>
+                  </div>
+              </td>
+
+              <td> <div align="center">
+                <input type="radio" required name="ShippingCOST" value="OverNight"> $50.00 Over night<br><br>
+                  </div>
+              </td>
+              <td> <div align="center">
+                <input type="radio" required name="ShippingCOST" value="ThreeDays"> $5.00 Three day<br><br>
+                  </div>
+              </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <input type = "submit" value = "Submit">
+        &nbsp;&nbsp;<!---give white space -->
+        <input type="reset" value = "Reset" >
+
+      </center>
+
+
+    </form>
+
+    </body>
+</html>

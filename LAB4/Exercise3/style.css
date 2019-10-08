@@ -1,0 +1,46 @@
+body
+{
+
+    background-color: silver;
+    background-image: url(background.gif);
+    background-size: cover;
+    background-repeat: repeat-y;
+}
+
+input[type=submit]
+{
+    width: 10em;  
+    height: 3em;
+    font-size: 15px;
+
+}
+
+input[type=reset] 
+{
+    width: 8em;  
+    height: 3em;
+    font-size: 13px;
+    
+}
+
+
+input[type=email]
+{
+    width: 20em;  
+    height: 2em;
+
+}
+
+
+input[type=password]
+{
+    width: 20em;  
+    height: 2em;
+
+}
+
+input[type="radio"] 
+{
+    margin-top: -3px;
+    vertical-align: middle;
+}
