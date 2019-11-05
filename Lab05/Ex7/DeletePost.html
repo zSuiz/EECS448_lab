@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Delete User Posts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="DeletePost.php" method="post">
+        <table border="1" >
+            <tr>
+                <th>User/Creator</th>
+                <th>Post Contents</th>
+                <th>Check to delete post(s)</th>
+            </tr>
+        <?php
+        $mysqli = new mysqli("mysql.eecs.ku.edu", "qphan1_28", "bachLong67", "qphan1_28");
+        $query = "SELECT author_id, content, post_id FROM Posts ORDER BY author_id ASC";
+        
+        if ($result = $mysqli->query($query))
+        {
+        while($row = $result->fetch_assoc()) 
+        {
+        $author_id = $row["author_id"];
+        $content = $row["content"];
+        $post_id = $row["post_id"];
+        
+            echo "<tr><td>";
+            echo $author_id;
+            echo "</td><td>";
+            echo $content;
+            echo "</td><td>";
+            echo "<input type='checkbox' name='checkbox[]' value='";
+            echo $post_id;
+	    echo "'>";
+            echo "</td></tr>";
+        }  
+        $result->free(); 
+        }
+        $mysqli->close(); 
+
+        ?>
+        </table>
+        </br>
+        <input type="submit" value="Delete checked Post(s)">
+        <h2>*This table only show users that has 1 or more posts (even white space).</h2>
+    </form>
+</body>
+
+</html>
