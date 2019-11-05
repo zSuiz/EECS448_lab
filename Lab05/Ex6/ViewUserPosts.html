@@ -1,0 +1,39 @@
+
+<html>
+
+<head>
+    <title>View User Posts</title>
+</head>
+
+<body>
+    <form action="ViewUserPosts.php" method="post">
+        <?php
+        $mysqli = new mysqli("mysql.eecs.ku.edu", "qphan1_28", "bachLong67", "qphan1_28");
+        $query = "SELECT user_id FROM Users ORDER BY user_id ASC";
+        
+        if ($result = $mysqli->query($query))
+        {
+            echo "Please choose the User ID that you want to view the post.</br>";
+            echo "<select name='usernames'>";
+        
+                while ($row = $result->fetch_assoc())
+                {
+                $username = $row["user_id"];
+                echo "<option > $username </option>";        	
+                }        
+                echo "</select>";
+        
+            echo "</br><input type='submit' value='View Post'>";        
+        $result->free();
+        }
+        
+        $mysqli->close();
+        
+        ?>
+    </form>
+</body>
+
+</html>
+
+
+
