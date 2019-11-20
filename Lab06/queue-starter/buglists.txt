@@ -1,0 +1,25 @@
+List of bugs during testing
+
+Enqueue is causing the problem in the program. It is the bug.
+By using Test7, Test8, Test11. I can tell that enqueue is not adding to the back of queue list. Instead, it adds new elements to the top (very similar to stack pushes elements)
+For example Test 11
+
+test11->enqueue(5);
+test11->enqueue(4);
+test11->enqueue(100);
+test11->enqueue(10);
+test11->enqueue(1);
+normal queue list should be after enqueue (FIFO): Front of queue [5,4,100,10,1] Back of queue
+but bug enqueue causes: Front of queue [1,10,100,4,5] Back of queue
+
+And because of that bug, dequeue and peekFront also give the wrong results.
+
+  dequeue does dequeue from the front of the error enqueue list.
+  test11->dequeue();
+  this will dequeue 1  of the list:  Front of queue [1,10,100,4,5] Back of queue   RESULT =>  Front of queue [10,100,4,5] Back of queue
+
+
+
+  peekFront also peek top of error enqueue list
+  test11->peekFront();
+  this will peekFront 1 of the queue list:  Front of queue [1,10,100,4,5] Back of queue
